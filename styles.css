@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -51,12 +55,12 @@ body {
     background: linear-gradient(to right, #ff105f, #ffad06);
     color: white;
     text-decoration: none;
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     text-align: center;
     transition: 0.3s;
     border: none;
-    border-radius: 0 0 20px 20px;
+    border-radius: 10px 10px 10px 10px;
     font-size: 1em;
     font-weight: bold;
 }
@@ -132,4 +136,58 @@ body {
 .login-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 10px rgba(255, 16, 95, 0.2);
+}
+.contacts-table a {
+    margin-right: 10px;
+}
+#edit-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#edit-form label {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#edit-form input[type="text"], #edit-form input[type="tel"], #edit-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+#edit-form input[type="text"]:focus, #edit-form input[type="tel"]:focus, #edit-form textarea:focus {
+    border-color: #ff105f;
+    box-sizing: border-box; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+#edit-form .add-button {
+    margin-top: 20px;
+}
+.icon-edit {
+    color: #f46a20;
+    transition: color 0.3s ease;
+}
+
+.icon-edit:hover {
+    color: #ff0000;
+}
+
+.icon-delete {
+    color: #d26a1b;
+    transition: color 0.3s ease;
+}
+
+.icon-delete:hover {
+    color: #ff0000;
 }

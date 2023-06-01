@@ -13,10 +13,20 @@
             <input type="text" id="name" name="name" required>
 
             <label for="phone">Telefone:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="anotacoes">Observações:</label>
+            <input type="text" id="anotacoes" name="anotacoes" >
 
             <input type="submit" value="Adicionar" class="add-button">
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
 </body>
 </html>

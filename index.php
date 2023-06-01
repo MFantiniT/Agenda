@@ -14,8 +14,10 @@
 <head>
     <title>Agenda de Contatos</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 <body>
+
     <div class="container">
         <h1 id="title">Agenda de Contatos</h1>
 
@@ -27,6 +29,13 @@
         </form>
 
         <table class="contacts-table">
+        <?php
+            session_start();
+            if (isset($_SESSION['mensagem'])) {
+                echo "<p style='text-align: center;'>" . $_SESSION['mensagem'] . "</p>";
+                unset($_SESSION['mensagem']);
+            }
+        ?>
             <tr>
                 <th>Nome</th>
                 <th>Telefone</th>
@@ -36,7 +45,15 @@
             <tr>
                 <td><?= $resultado['nome'] ?></td>
                 <td><?= $resultado['telefone'] ?></td>
-
+                <td>
+                <a href="editContato.php?id=<?php echo $resultado['id']."&nome=".$resultado['nome']."&telefone=".$resultado['telefone']."&anotacoes=".$resultado['anotacoes'] ; ?>">
+                    <i class="fas fa-pencil-alt icon-edit"></i>
+                </a>
+                <a href="delete.php?id=<?php echo $resultado['id']; ?>">
+                    <i class="fas fa-trash icon-delete"></i>
+                </a>
+                <a href="https://wa.me/<?=$resultado['telefone'] ?>">wpp</a>
+                </td>
             </tr>
                 <?php endwhile; ?>
 
